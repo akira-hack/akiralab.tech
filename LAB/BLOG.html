@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <noscript>
+          <meta http-equiv="refresh" content="0; url=no-js.html">
+        </noscript>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>BLOG</title>
+          <link rel="icon" type="image/png" sizes="512x512"  href="../img/icon_512.png">
+          <link rel="icon" type="image/png" sizes="192x192"  href="../img/icon_192.png">
+          <link rel="icon" type="image/png" sizes="32x32"    href="../img/icon_32.png">
+          <link rel="stylesheet" type="text/css"             href="../css/main.css"/>
+      </head>
+<body style="background-color: black;">
+    <div id="loading-screen">
+        <video id="loading-video" autoplay onended="this.parentNode.style.opacity='0'; this.parentNode.style.transition='opacity 1s'; this.parentNode.style.pointerEvents='none'; setTimeout(function(){this.parentNode.style.display='none';}, 1000);">
+          <source src="../img/oswald_gif.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <span style="color: #FA4C14;font-family:'Jersey 15', sans-serif; font-size: 30px; margin-right: 30px;">AKIRA</span>
+          <li><a href="../index.html">2_MAIN_PAGE</a></li>
+        </ul>
+      </nav>
+    <div style="  position: absolute;
+
+    top: 50%;
+  
+    left: 50%;
+  
+    transform: translate(-50%, -50%);
+  
+    text-align: center;">
+        <p style="color: #FA4C14;font-family:'Jersey 15', sans-serif; font-size: xx-large;">CURRENTLY UNAVAILABLE</p>
+        <p style="font-size: x-large;">coming soon</p>
+        <p style="font-size: large;">nevertheless, products and services are available. Please contact us via the links on the main page for details</p>
+    </div>
+
+
+
+
+    
+  
+  <!-- TEXT GLITCH -->
+  <script>
+    const chars = "×#-_¯—0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ";
+    
+    var Glitch = function(selector, index, numberOfGlitchedLetter, timeGlitch, timePerLetter, timeBetweenGlitch){
+      this.selector = selector;
+      this.index = index;
+      this.numberOfGlitchedLetter = numberOfGlitchedLetter;
+      this.innerText;
+      this.charArray = [];
+      this.charIndex = [];
+      this.timeGlitch = timeGlitch;
+      this.timeBetweenGlitch = timeBetweenGlitch;
+      this.timePerLetter = timePerLetter;
+      this.maxCount = Math.floor(this.timeGlitch/this.timePerLetter);
+      this.count = 0;
+      this.intervalId = null;
+      this.timeoutId = null;
+    }
+    
+    Glitch.prototype.init = function(){
+      this.innerText = this.selector.innerText;
+      this.charArray = this.innerText.split("");
+      this.numberOfGlitchedLetter = this.charArray.length; // animate all characters
+      this.defineCharIndexToRandomize();
+    }
+    Glitch.prototype.defineCharIndexToRandomize = function(){
+      this.charIndex = [];
+      for(let i=0; i<this.numberOfGlitchedLetter; i++){
+        let randCharIndex = i; // animate all characters
+        this.charIndex.push(randCharIndex);
+      }
+    }
+    
+    Glitch.prototype.randomize = function(){
+      let randomString = Array.from(this.charArray);
+      for(let i=0; i<this.numberOfGlitchedLetter; i++){
+        let randIndex = Math.floor(Math.random() * chars.length);
+        let randCharIndex = this.charIndex[i];
+        if(randomString[randCharIndex] !== ' '){
+          randomString[randCharIndex] = chars[randIndex];
+        }
+      }
+      this.selector.innerText = randomString.join("");
+    }
+    
+    Glitch.prototype.update = function(){
+      if(this.count >= this.maxCount - 1){
+        this.selector.innerText = this.innerText;
+        this.defineCharIndexToRandomize();
+        this.count = 0;
+      }else{
+        this.randomize();
+        this.count ++;
+      }
+    }
+    
+    Glitch.prototype.startGlitch = function(){
+      let ctx = this;
+      this.intervalId = setInterval(function(){
+        ctx.update();
+      }, 10); // decreased timePerLetter to 10
+      this.timeoutId = setTimeout(function(){
+        ctx.stopGlitch();
+      }, 200); // decreased glitch time to 0.2 seconds
+    }
+    
+    Glitch.prototype.stopGlitch = function(){
+      clearInterval(this.intervalId);
+      clearTimeout(this.timeoutId);
+      this.selector.innerText = this.innerText;
+      this.count = 0;
+    }
+    
+    var glitchArray = [];
+    
+    function initAllGlitch(){
+      var arrayElements = document.querySelectorAll("a, button");
+      for(let i=0; i<arrayElements.length; i++){
+        let selector = arrayElements[i];
+        let glitch = new Glitch(selector, i, undefined, 200, 10, 400);
+        glitch.init();
+        glitchArray.push(glitch);
+        selector.addEventListener("mouseover", function(){
+          glitch.startGlitch();
+        });
+        selector.addEventListener("mouseout", function(){
+          glitch.stopGlitch();
+        });
+      }
+    }
+    
+    initAllGlitch();
+          </script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<!-- Special thanks to dragonfly and HeronPreston for the wonderful templates and great taste (#FA4C14) :) -->
+
+<html lang="en">
+<head>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=./no-js.html">
+  </noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKIRA</title>
+    <link rel="icon" type="image/png" sizes="512x512"  href="img/icon_512.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/icon_192.png">
+    <link rel="icon" type="image/png" sizes="32x32"    href="img/icon_32.png">
+    <link rel="stylesheet" type="text/css"             href="css/main.css"/>
+</head>
+
+<body>
+  <div id="HOME"></div>
+
+  <div id="loading-screen">
+    <video id="loading-video" autoplay onended="this.parentNode.style.opacity='0'; this.parentNode.style.transition='opacity 1s'; this.parentNode.style.pointerEvents='none'; setTimeout(function(){this.parentNode.style.display='none';}, 1000);">
+      <source src="./img/oswald_gif.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <span style="color: #FA4C14;font-family:'Jersey 15', sans-serif; font-size: 30px; margin-right: 30px;">AKIRA</span>
+      <li><a href="#MANIFESTO">2_MANIFESTO</a></li>
+      <li><a href="#ABOUT">3_ABOUT</a></li>
+      <li><a href="#LAB">4_LAB</a></li>
+      <li><a href="./LAB/SHOP.html">5_SHOP</a></li>
+    </ul>
+  </nav>
+
+    <header>
+        <pre class="headerPreMax"></pre>
+        <pre class="headerPreMin"> 
+   _   _  _____ ___    _   
+  /_\ | |/ /_ _| _ \  /_\  
+ / _ \| ' < | ||   / / _ \ 
+/_/ \_\_|\_\___|_|_\/_/ \_\
+<p>404_AND_ERROR<br><span style="font-family: 'Jersey 15', sans-serif; color: #FA4C14;">DAY ONE</span></p>
+        </pre>
+    </header>
+
+      <script> 
+function runningline(msg, ctrlwidth) {
+  const container = document.createElement('div');
+  container.style.width = `${ctrlwidth}px`;
+  container.style.overflow = 'hidden';
+  container.style.whiteSpace = 'nowrap';
+  container.style.fontWeight = 'bold';
+  container.style.color = '#FA4C14';
+  container.style.backgroundColor = 'black';
+
+  let newMsg = msg;
+  while (newMsg.length < ctrlwidth) {
+    newMsg += msg;
+  }
+
+  container.innerHTML = newMsg;
+
+  document.body.appendChild(container);
+
+  function prokrutka() {
+    const currentMsg = container.innerHTML;
+    const newMsg = currentMsg.substring(1) + currentMsg[0];
+    container.innerHTML = newMsg;
+    setTimeout(prokrutka, 300);
+  }
+
+  prokrutka();
+}
+
+runningline("AKIRA ", 10000);
+            </script>
+            
+    <div class="PHONE" style="text-align: center; margin: 0 auto; max-width: 80%; padding: 20px;">
+      <h2 style="color: #FA4C14;">not available on phones or devices with this resolution</h2>
+      <p>we sincerely ask you to switch to the desktop version for full use of the resource</p>
+      <p style="float: right; color: #585858;"><img src="./img/icon_32-transformed.png" style="float: right;">&copy;2024 AKIRAHACK</p>
+    </div>
+    <div class="PC">
+    <div id="mainPage">
+    
+        <div class="greeting" style="font-size: 30px;">
+          <p class="greeting_hlwrld" style="text-align: center;">&lt------HACK_AND_PROTECT_FROM------&gt</p>
+          <p class="greeting_hlwrld" style="text-align: center; font-family: 'Jersey 15', sans-serif; color: #FA4C14;">DAY ONE</p>
+          <div id="myDiv" style="text-align: center; font-size: 25px; height: 50px;"></div>
+        </div>
+
+        <div id="greeting" style="line-height: 30px; display: flex; justify-content:center; border: 2px dashed #272727; border-radius: 5px; width: 1200px;">
+          <div style="width: 800px; margin-top: 40px;">
+            <div class="activity spinning">|</div>
+            <span style="font-size: xx-large;">An independent laboratory for physical information security, hacking and engineering, providing unique knowledge to enlighten seekers.<br><br>
+            Contacts at the bottom. In the meantime - manifesto!<br></span>
+          </div>
+
+          <pre id="greeting-desktop" style=" flex-shrink: 0;">
+ ______________
+||            ||
+||            ||
+||            ||
+||            ||
+||____________||
+|______________|
+ \\############\\
+  \\############\\
+   \      ____    \
+    \_____\___\____\</pre>
+          
+          <pre id="greeting-mobile" style="display: none;">
+ ______________
+||            ||
+||            ||
+||            ||
+||            ||
+||____________||
+|______________|
+ \\############\\
+  \\############\\
+   \      ____    \
+    \_____\___\____\</pre>
+        </div>
+
+        <div id="MANIFESTO"></div>
+
+
+
+
+
+
+
+
+          <div style="margin: 0 auto; width: 420px;;">
+            <img src="./img/1dc611c0f29e30e7a4eb3b65471c178c.png" class="parallax-img">
+          </div>
+
+
+          <script type="text/javascript">
+            function createMarquee(word, width) {
+              const marqueeText = ` ${word} `;
+              let newText = marqueeText;
+              while (newText.length < width) {
+                newText += marqueeText;
+              }
+              document.write(`
+                <form name="marqueeForm">
+                  <input
+                    name="marqueeInput"
+                    style="border: 0; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 40px; background-color: black; width: 100%; user-select: none; pointer-events: none;"
+                    value="${newText}"
+                    size="${width}"
+                  />
+                </form>
+              `);
+              animateMarquee();
+            }
+          
+            function animateMarquee() {
+              const marqueeInput = document.marqueeForm.marqueeInput;
+              const currentValue = marqueeInput.value;
+              const newValue = currentValue.substring(1, currentValue.length) + currentValue.substring(0, 1);
+              marqueeInput.value = newValue;
+              setTimeout(animateMarquee, 300);
+            }
+          </script>
+          
+          <script type="text/javascript">
+            createMarquee("MANIFESTO", 1000);
+          </script>
+
+          <!-- <p style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 40px; padding-left: 15%;">MANIFESTO</p> -->
+          <div id="greeting" style="max-width: 55%;">
+            PART_1<br> For the full long term functioning of the body from a multitude of professional specialists, a kind of quality control of the output is necessary. <br> <br>
+            PART_2<br> Its provision is fully controlled by the company's establishment and its knowledge in belonging to the derivative product of the company itself. <br> <br> 
+            PART_3<br> In the absence of knowledge in complex areas, as well as specialists who can competently guide the management, the expected missteps occur, leading to breaches in the sphere. In our case, information security. <br> <br>
+            PART_4<br> The assumed patterns of company behaviour in this regard are misguided, as they protect the company from kids who have discovered the developer console in a browser and know how to run BurpSuite, rather than the actual problem. <br> <br>
+            PART_5<br> That's how AKIRA came to be. So arise those who are truly ready to enlighten the ignorant.  Those who realise that knowledge of settings, scanners and anti-viruses cannot be a guarantee of a safe society. <br> <br>
+            PART_6<br> AKIRA's mission is to destroy, revive, reveal, seduce, break. AKIRA's philosophy is in freedom, in the power of knowledge and the incommensurable power of the human mind. It is the fist of god, bringing punishment to the mundane. <br> <br>
+            PART_7<br> Did you come here on advice, rumour or coincidence? I don't care. Our message is visible only to those who understand. AKIRA is a treasure trove of information, tools and instruments that we share with the world. We look forward to meaningful conversations. <br> <br>
+            <span style="color: #585858;">6AR1_X <br><span class="glitch"> Or leave... Really, just go. Enjoy blissful ignorance, truly believe in your safety, your privacy and just get on with your life with your eyes wide shut. In the meantime, we'll keep fighting. Until the end...
+          </div>
+
+
+          <div id="greeting" style=" text-align: center; padding-top: 60px;"></div>
+
+          <div class="parallax-container">
+            <img src="./img/d88dab61f3a5f6dc60851e4d32e686a2-transformed.png" class="parallax-image" style="width: 580px;">
+            <p style="font-family:'Jersey 15', sans-serif; font-size: 45px; color: black; line-height: 50px;">FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION FIREWALL ENCRYPTION PHISHING RANSOMWARE VULNERABILITY EXPLOIT BACKDOOR BRUTEFORCE PACKETSNIFER KEYLOGGER ROOTKIT MALWARE TROJAN WORM VIRUS SPYWARE ADWARE BOTNET DDOS SQLINJECTION CROSSSITE SCRIPTING PENETRATION TESTING VIRTUALPRIVATE NETWORK INCIDENT RESPONSE THREATINTELLIGENCE RISKASSESSMENT COMPLIANCE AUDIT AUTHENTICATION ACCESSCONTROL ENCRYPTIONKEY DIGITALSIGNATURE CERTIFICATE PRIVATEKEY PLAINTEXT HASHFUNCTION SALTING PASSWORDCRACKING BRUTEFORCEATTACK RAINBOWTABLE DICTIONARYATTACK SOCIALENGINEERING PRETEXTING BAITSWITCHING QUIDPROQUO WHALING SPEARPHISHING WATERINGHOLE DRIVEBYDOWNLOAD EXPLOITKIT PAYLOAD COMMANDANDCONTROL BEACONING DATAEXFILTRATION LATERALMOVEMENT PERSISTENCE ELEVATION PRIVILEGEESCALATION KERNELMODE USERMODE SYSTEMCALL APIHOOKING DLLINJECTION THREADINJECTION MEMORYFORENSICS NETWORKFORENSICS ENDPOINTDETECTION SIEM NETWORKSEGMENTATION CLOUDSECURITY ATTACKVECTOR CONFIGURATIONCOMPLIANCE EASM SESSIONHIJACKING CLICKJACKING DNSPOISONING ARPPOISONING SSLSTRIPING EVILTWIN WEPWPAWPA2 KRACKATTACK BLUEBORNE SPECTRE FORESHADOW ROWHAMMER FIRMWAREREVERSE ENGINEERING BINARYANALYSIS MEMORYDUMPING DLLINJECTION USERMODEHOOKING ENDPOINTPROTECTION FIREWALL DISASTERRECOVERY BLACKHAT IDS VIRTUALIZATION</p>
+          </div>
+        </div>
+
+        <div id="ABOUT" style=" display: flex; flex-direction: row; width: 100%; padding-top: 140px; text-align: center;">
+          <div style="margin: 10px; width: 300px; height: 700px; background-color: #FA4C14; clip-path: polygon(0 0, 100% 0, 100% 86%, 65% 100%, 0 100%); border-radius: 5px;">
+            <div style="margin: 10%; border: 1.5px solid black; border-radius: 10px; "><img src="./img/b70281b47c87eb948628885f0062a052.gif" style="width: 70%;"></div>
+            <p style="font-size: xx-large; font-family: 'Jersey 15', sans-serif; color: black;">AKIRA</p>
+            <p style="font-size: x-large; color: black;">RESEARCH</p>
+            <br>
+            <p style="font-size: large; color: black; margin: 4%; text-align: left;">The aim of the project is to help the problems of foreign information security in all spheres of life, from technical and engineering components to obvious code tricks. This is not an organised crime group or anarchist-destructive individuals with delusions of grandeur. This is a project designed to eliminate imperfections in the world of technology. </p>
+            <p style="float: left; margin-left: 10%; color: black; font-family: 'Jersey 15', sans-serif; color: black;">AKIRAHACK.TECH</p>
+          </div>
+
+          <div style="margin: 10px; width: 60%; height: 600px; border: 1px solid antiquewhite; border-radius: 5px; ">
+            <p class="greeting_hlwrld" style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 30px; padding-top: 40px; padding-left: 15%;">WHAT_IS_AKIRA</p>
+            <ul style="list-style: square; text-align: left; font-size: x-large;">
+              <li>General, including scientific, research and articles in the field of information security</li>
+              <p></p>
+              <li>Creation, improvement and customisation of tools to check and protect against hacker attacks</li>
+              <p></p>
+              <li>Manual as well as automated hacking of resources and devises of any complexity</li>
+              <p></p>
+              <li>Physically scanning for vulnerabilities in sensitive targets like secured facilities and serverrooms, as well as their defence</li>
+              <p></p>
+              <li>Creation and improvement of existing engineering devices related to information security</li>
+              <p></p>
+              <li>Information security and technology literacy education for teenagers. Teaching both technical aspects and, directly, hacking and protection</li>
+          </ul>
+          </div>
+
+          <div style="margin: 10px; width: 25%; height: 600px;">
+            <p style=" width: 15%; padding-left: 5%; color: black; font-size: x-large;"><span style="background-color: #FA4C14;">STATS</span></p>
+            <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
+            <p style=" width: 70%; padding-left: 5%; font-size: x-large;"><span style="color: #FA4C14;">19</span><br><span>PRODUCTS INVENTED AND PRODUCED</span></p>
+            <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
+            <p style=" width: 70%; padding-left: 5%; font-size: x-large;"><span style="color: #FA4C14;">43</span><br><span>COMPANIES HACKED</span></p>
+            <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
+            <p style=" width: 70%; padding-left: 5%; font-size: x-large;"><span style="color: #FA4C14;">2018</span><br><span>YEAR FOUNDED</span></p>
+            <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
+            <img src="./img/f8142eaab0aa4433e036c33035af4109.gif" style="width: 350px; float: left; height: 170px;">
+          </div>
+        </div>
+
+        <pre style="font-size: small; float: right; margin-right: 40px;">
+          8  
+          8
+          8
+         888
+         888  
+        88888
+       8888888
+      888888888
+  88888888888888888
+     88888888888
+      888888888
+       8888888
+        88888
+        88888
+         888
+         888
+          8
+          8
+          8</pre>
+
+        <div class="oswald-container">
+          <div class="oswald-gif-wrap">
+            <img src="./img/oswald_blink.gif" alt="GIF">
+          </div>
+          <div class="oswald-text-block">
+            <h2>OSWALD</h2>
+            <p>Introducing this unpretentious handsome - our mascot. Sophisticated symbolism is an illusion imposed by corporations and culture. So we decided to go with a simple bunny. He's cute</p>
+          </div>
+        </div>
+
+
+
+          <p class="greeting_hlwrld" style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 35px; padding-top: 140px; padding-left: 25%;">AKIRA_LAB</p>
+          <div class="button-container" style="border: 2px dashed #272727; border-radius: 8px;">
+              <button class="big-button" onclick="location.href='./LAB/SHOP.html'">
+                SHOP
+              </button>
+              <button class="big-button" onclick="location.href='./LAB/BLOG.html'">
+                BLOG
+              </button>
+              <button class="big-button" onclick="location.href='./LAB/RESEARCH.html'">
+                RESEARCH
+              </button>
+              <button class="big-button" onclick="location.href='./LAB/TOOLS.html'">
+                TOOLS
+              </button>
+            </div>
+
+<!-- FOOTER -->
+    <p style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14 ; font-size: 40px; padding-top: 140px; padding-left: 2%;">CONTACT_US</p>
+    <footer>
+      <div class="container">
+        <ul class="footer-links">
+          <a href="./LINKS/MX.html" class="link-container">MAIL...</a>
+          <a href="./LINKS/TG.html" class="link-container">TELGRM.</a>
+          <a href="./LINKS/JB.html" class="link-container">JABBER.</a>
+        </ul>
+      </div>
+    </footer>
+    <p style="color: #585858; text-align: center;">&lt----BUSHIDO----&gt<br>we don't tolerate child pornography, sale of hard drugs, and violence<br>AKIRA, as an idea, fights against immoral manifestations of personality. We maintain that if you are rotten, rot within yourself.<br>while our goals may be considered illegal in some states, we hold libertarian and peaceful beliefs<br>may the truth be with you</p>
+    <span style="float: left; color: #313131;">HACKING_COMPANY</span>
+    <span style="position: absolute; left: 50%; transform: translateX(-50%); color: #313131;">2018-2025</span>
+    <span style="float: right; color: #313131;">&copy;AKIRAHACK</span>
+  <div id="LAB"></div>
+
+
+                        <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ JAVASCRIPT $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+    <script>
+        const parallaxContainer = document.querySelector('.parallax-container');
+const parallaxImage = document.querySelector('.parallax-image');
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const containerTop = parallaxContainer.offsetTop;
+  const containerHeight = parallaxContainer.offsetHeight;
+  const yPos = (scrollPosition - containerTop) * 0.5;
+  parallaxImage.style.transform = `translateY(${Math.min(0, yPos)}px)`;
+});
+function changeText() {
+  const div = document.getElementById('myDiv');
+  let textIndex = 0;
+  const texts = [' +_+', ' *_*', ' 0_0', ' $_$',' ^_^',' @_@',' x_x',' O_o'];
+  let currentText = '';
+  let charIndex = 0;
+  setInterval(() => {
+    if (charIndex < texts[textIndex].length) {
+      currentText += texts[textIndex][charIndex];
+      div.textContent = currentText;
+      charIndex++;
+    } else {
+      setTimeout(() => {
+        textIndex = (textIndex + 1) % texts.length;
+        currentText = '';
+        charIndex = 0;
+      }, 1000);
+    }
+  }, 100);
+}
+changeText();
+        </script>
+
+  <script>
+      const parallaxImg = document.querySelector('.parallax-img');
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const parallaxDistance = scrollPosition * 0.2;
+      parallaxImg.style.transform = `translateY(-${parallaxDistance}px)`;
+    });
+  </script>
+
+
+
+<!-- ASCII MORPH -->
+ <script>
+var AsciiMorph = (function() {
+'use strict';
+var element = null;
+var canvasDimensions = {};
+var renderedData = [];
+var framesToAnimate = [];
+var myTimeout = null;
+function extend(target, source) {
+  for (var key in source) {
+    if (!(key in target)) {
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function repeat(pattern, count) {
+    if (count < 1) return '';
+    var result = '';
+    while (count > 1) {
+        if (count & 1) result += pattern;
+        count >>= 1, pattern += pattern;
+    }
+    return result + pattern;
+}
+function replaceAt(string, index, character ) {
+  return string.substr(0, index) + character + string.substr(index+character.length);
+}
+function init(el, canvasSize) {
+  element = el;
+  canvasDimensions = canvasSize;
+}
+function squareOutData(data) {
+   var i;
+  var renderDimensions = {
+    x: 0,
+    y: data.length
+  };
+  for( i = 0; i < data.length; i++ ) {
+    if( data[i].length > renderDimensions.x) {
+      renderDimensions.x = data[i].length
+    }
+  }
+  for( i = 0; i < data.length; i++ ) {
+    if( data[i].length < renderDimensions.x) {
+      data[i] = (data[i] + repeat(' ', renderDimensions.x - data[i].length ));
+    }
+  }
+  var paddings = {
+    x: Math.floor((canvasDimensions.x - renderDimensions.x) / 2),
+    y: Math.floor((canvasDimensions.y - renderDimensions.y) / 2)
+  }
+  for( var i = 0; i < data.length; i++ ) {
+    data[i] = repeat(' ', paddings.x) + data[i] + repeat(' ', paddings.x);
+  }
+  for( var i = 0; i < canvasDimensions.y; i++ ) {
+    if( i < paddings.y) {
+      data.unshift( repeat(' ', canvasDimensions.x));
+    } else if (i > (paddings.y + renderDimensions.y)) {
+      data.push( repeat(' ', canvasDimensions.x));
+    }
+  }
+  return data;
+}
+function getMorphedFrame(data) {
+  var firstInLine, lastInLine = null;
+  var found = false;
+  for( var i = 0; i < data.length; i++) {
+    var line = data[i];
+    firstInLine = line.search(/\S/);
+    if( firstInLine === -1) {
+      firstInLine = null;
+    }
+    for( var j = 0; j < line.length; j++) {
+      if( line[j] != ' ') {
+        lastInLine = j;
+      }
+    }
+    if( firstInLine !== null && lastInLine !== null) {
+      data = crushLine(data, i, firstInLine, lastInLine)
+      found = true;
+    }
+    firstInLine = null, lastInLine = null;
+  }
+  if( found ) {
+    return data;
+  } else {
+    return false;
+  }
+}
+function crushLine(data, line, start, end) {
+  var centers = {
+    x: Math.floor(canvasDimensions.x / 2),
+    y: Math.floor(canvasDimensions.y / 2)
+  }
+  var crushDirection = 1;
+  if( line > centers.y ) {
+    crushDirection = -1;
+  }
+  var charA = data[line][start];
+  var charB = data[line][end];
+  data[line] = replaceAt(data[line], start, " ");
+  data[line] = replaceAt(data[line], end, " ");
+  if( !((end - 1) == (start + 1)) && !(start === end) && !((start + 1) === end)) {
+    data[line + crushDirection] = replaceAt(data[line + crushDirection], (start + 1), '+*/\\'.substr(Math.floor(Math.random()*'+*/\\'.length), 1));
+    data[line + crushDirection] = replaceAt(data[line + crushDirection], (end - 1), '+*/\\'.substr(Math.floor(Math.random()*'+*/\\'.length), 1));
+  } else if ((((start === end) || (start + 1) === end)) && ((line + 1) !== centers.y && (line - 1) !== centers.y && line !== centers.y)) {
+    data[line + crushDirection] = replaceAt(data[line + crushDirection], (start), '+*/\\'.substr(Math.floor(Math.random()*'+*/\\'.length), 1));
+    data[line + crushDirection] = replaceAt(data[line + crushDirection], (end), '+*/\\'.substr(Math.floor(Math.random()*'+*/\\'.length), 1));
+  }
+  return data;
+}
+function render(data) {
+  var ourData = squareOutData(data.slice());
+  renderSquareData(ourData);
+}
+function renderSquareData(data) {
+  element.innerHTML = '';
+  for( var i = 0; i < data.length; i++ ) {
+    element.innerHTML = element.innerHTML + data[i] + '\n';
+  }
+  renderedData = data;
+}
+function morph(data) {
+  clearTimeout(myTimeout);
+  var frameData = prepareFrames(data.slice());
+  animateFrames(frameData);
+}
+function prepareFrames(data) {
+  var deconstructionFrames = [];
+  var constructionFrames = [];
+  var clonedData = renderedData
+  for(var i = 0; i < 100; i++) {
+    var newData = getMorphedFrame(clonedData);
+    if( newData === false) {
+      break;
+    }
+    deconstructionFrames.push(newData.slice(0)); 
+    clonedData = newData;
+  }
+  var squareData = squareOutData(data);
+  constructionFrames.unshift(squareData.slice(0));
+  for( var i = 0; i < 100; i++ ) {
+    var newData = getMorphedFrame(squareData);
+    if( newData === false) {
+      break;
+    }
+    constructionFrames.unshift(newData.slice(0));
+    squareData = newData;
+  }
+  return deconstructionFrames.concat(constructionFrames)
+}
+function animateFrames(frameData) {
+  framesToAnimate = frameData;
+  animateFrame();
+}
+function animateFrame() {
+  myTimeout = setTimeout(function() {
+    renderSquareData(framesToAnimate[0]);
+    framesToAnimate.shift();
+    if( framesToAnimate.length > 0 ) {
+      animateFrame();
+    }
+  }, 20)
+}
+function main(element, canvasSize) {
+  if( !element || !canvasSize ) {
+    console.log("sorry, I need an element and a canvas size");
+    return;   
+  }
+  init(element, canvasSize);
+}
+return extend(main, {
+  render: render,
+  morph: morph
+});
+})();
+var element = document.querySelector('pre');
+AsciiMorph(element, {x: 8,y: 8});                       
+var asciis = [[
+" █████╗ ██╗  ██╗██╗██████╗  █████╗ ",
+"██╔══██╗██║ ██╔╝██║██╔══██╗██╔══██╗",                  // ANSII SHADOW
+"███████║█████╔╝ ██║██████╔╝███████║",
+"██╔══██║██╔═██╗ ██║██╔══██╗██╔══██║",
+"██║  ██║██║  ██╗██║██║  ██║██║  ██║",
+"╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝",
+],
+[
+"    ██     ██",
+"  ██████ ██████",
+"  ██████ ██████",
+"  ██████ ██████",
+" █████ ████ ████",
+"█████████████████",
+"████████  ███████",
+"  █████████████",
+],
+[
+"    \\    |  /_ _|  _ \\     \\   ",
+"   _ \\   ' /   |  |   |   _ \\  ",
+"  ___ \\  . \\   |  __ <   ___ \\ ",
+"_/    _\\_|\\_\\___|_| \\_\\_/    _\\",
+],
+[ 
+"       ▄▄▀▀▀▀▄▄      ",
+"      █        █     ",
+"     █ ▄▀█  █▀▄ █    ",
+"    ▐▌          ▐▌   ",
+"    █▌▀▄  ▄▄  ▄▀▐█   ",
+"   ▐██  ▀▀  ▀▀  ██▌  ",
+"  ▄████▄  ▐▌  ▄████▄ ",
+],
+[
+" ______     __  __     __     ______     ______   ",
+"/\\  __ \\   /\\ \\/ /    /\\ \\   /\\  == \\   /\\  __ \\  ",
+"\\ \\  __ \\  \\ \\  _'-.  \\ \\ \\  \\ \\  __<   \\ \\  __ \\ ",
+" \\ \\_\\ \\_\\  \\ \\_\\ \\_\\  \\ \\_\\  \\ \\_\\ \\_\\  \\ \\_\\ \\_\\",
+"  \\/_/\\/_/   \\/_/\\/_/   \\/_/   \\/_/ /_/   \\/_/\\/_/",
+],
+[
+"    ██     ██",
+"  ██████ ██████",
+"  ██████ ██████",
+"  ██████ ██████",
+" █████ ████ ████",
+"█████████████████",
+"████████  ███████",
+"  █████████████",
+  ],
+];
+AsciiMorph.render(asciis[0]);
+var currentIndex = 2;
+setTimeout(function() {
+AsciiMorph.morph(asciis[1]);
+}, 1000);
+setInterval(function() {
+AsciiMorph.morph(asciis[currentIndex]);
+currentIndex++;
+currentIndex%= asciis.length;
+}, 3000);
+      </script>
+
+<!-- TEXT GLITCH -->
+      <script>
+const chars = "×#-_¯—0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ";
+
+var Glitch = function(selector, index, numberOfGlitchedLetter, timeGlitch, timePerLetter, timeBetweenGlitch){
+  this.selector = selector;
+  this.index = index;
+  this.numberOfGlitchedLetter = numberOfGlitchedLetter;
+  this.innerText;
+  this.charArray = [];
+  this.charIndex = [];
+  this.timeGlitch = timeGlitch;
+  this.timeBetweenGlitch = timeBetweenGlitch;
+  this.timePerLetter = timePerLetter;
+  this.maxCount = Math.floor(this.timeGlitch/this.timePerLetter);
+  this.count = 0;
+  this.intervalId = null;
+  this.timeoutId = null;
+}
+
+Glitch.prototype.init = function(){
+  this.innerText = this.selector.innerText;
+  this.charArray = this.innerText.split("");
+  this.numberOfGlitchedLetter = this.charArray.length; // animate all characters
+  this.defineCharIndexToRandomize();
+}
+Glitch.prototype.defineCharIndexToRandomize = function(){
+  this.charIndex = [];
+  for(let i=0; i<this.numberOfGlitchedLetter; i++){
+    let randCharIndex = i; // animate all characters
+    this.charIndex.push(randCharIndex);
+  }
+}
+
+Glitch.prototype.randomize = function(){
+  let randomString = Array.from(this.charArray);
+  for(let i=0; i<this.numberOfGlitchedLetter; i++){
+    let randIndex = Math.floor(Math.random() * chars.length);
+    let randCharIndex = this.charIndex[i];
+    if(randomString[randCharIndex] !== ' '){
+      randomString[randCharIndex] = chars[randIndex];
+    }
+  }
+  this.selector.innerText = randomString.join("");
+}
+
+Glitch.prototype.update = function(){
+  if(this.count >= this.maxCount - 1){
+    this.selector.innerText = this.innerText;
+    this.defineCharIndexToRandomize();
+    this.count = 0;
+  }else{
+    this.randomize();
+    this.count ++;
+  }
+}
+
+Glitch.prototype.startGlitch = function(){
+  let ctx = this;
+  this.intervalId = setInterval(function(){
+    ctx.update();
+  }, 10); // decreased timePerLetter to 10
+  this.timeoutId = setTimeout(function(){
+    ctx.stopGlitch();
+  }, 200); // decreased glitch time to 0.2 seconds
+}
+
+Glitch.prototype.stopGlitch = function(){
+  clearInterval(this.intervalId);
+  clearTimeout(this.timeoutId);
+  this.selector.innerText = this.innerText;
+  this.count = 0;
+}
+
+var glitchArray = [];
+
+function initAllGlitch(){
+  var arrayElements = document.querySelectorAll("a, button");
+  for(let i=0; i<arrayElements.length; i++){
+    let selector = arrayElements[i];
+    let glitch = new Glitch(selector, i, undefined, 200, 10, 400);
+    glitch.init();
+    glitchArray.push(glitch);
+    selector.addEventListener("mouseover", function(){
+      glitch.startGlitch();
+    });
+    selector.addEventListener("mouseout", function(){
+      glitch.stopGlitch();
+    });
+  }
+}
+
+initAllGlitch();
+      </script>
+</div>
+</body>
+</html>
