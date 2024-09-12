@@ -521,3 +521,25 @@ body {
   width: 0;
   height: 0;
 }
+
+
+
+
+.main_inf {
+  max-width: 600px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 50px;
+  border: 2px dashed #272727;
+  border-radius: 5px;
+}
+
+.text_main_inf {
+  margin-left: 5px;
+  line-height: 25px;
+  font-size: x-large;
+}
