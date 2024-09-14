@@ -575,7 +575,7 @@ body {
   border-radius: 5px; 
   background-color: #000000; 
   border-radius: 5px;
-  transition: opacity 0.5s, visibility 0.5s; 
+  transition: opacity 0.2s, visibility 0.2s; 
 }
 
 .tooltip-button:hover + .tooltip {
