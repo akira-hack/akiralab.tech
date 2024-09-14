@@ -163,23 +163,23 @@ canvas {
 
 
 .navbar {
-  position: fixed; /* фиксируем navbar к верху страницы */
+  position: fixed; 
   top: 0;
   left: 0;
-  width: 100%; /* делаем navbar во всю длину страницы */
-  background-color: black; /* цвет фона navbar */
-  padding: 5px; /* добавляем отступы */
-  display: flex; /* делаем navbar flex- контейнером */
-  justify-content: space-between; /* равномерно распределяем элементы */
-  align-items: center; /* центрируем элементы по вертикали */
+  width: 100%; 
+  background-color: black; 
+  padding: 5px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
   z-index: 999;
 }
 
 .navbar-nav {
-  list-style: none; /* убираем маркеры списка */
+  list-style: none; 
   margin: 0;
   padding: 0;
-  display: flex; /* делаем список flex- контейнером */
+  display: flex; 
 }
 
 .navbar-nav li {
@@ -189,13 +189,13 @@ canvas {
 }
 
 .navbar-nav a {
-  color: antiquewhite; /* цвет текста ссылок */
-  text-decoration: none; /* убираем подчеркивание ссылок */
-  transition: color 0.2s ease; /* добавляем эффект анимации при наведении */
+  color: antiquewhite; 
+  text-decoration: none; 
+  transition: color 0.2s ease; 
 }
 
 .navbar-nav a:hover {
-  color: #FA4C14; /* цвет текста ссылок при наведении */
+  color: #FA4C14; 
 }
 
 
@@ -228,13 +228,13 @@ canvas {
 .big-button:hover {
     background-color: #FA4C14;
     color: black;
-    transform: scale(1.01); /* scale up by 2% */
+    transform: scale(1.01); 
 }
 
 
 .parallax-container {
   width: 100%;
-  height: 1200px; /* adjust the height to your needs */
+  height: 1200px; 
   overflow: hidden;
   position: relative;
   background-color: #FA4C14;
@@ -242,29 +242,16 @@ canvas {
 
 .parallax-image {
   position: absolute;
-  bottom: 0; /* changed from top: 0 to bottom: 0 */
+  bottom: 0; 
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateY(100%); /* changed from translateY(0) to translateY(100%) */
+  transform: translateY(100%); 
   transition: transform 0.5s ease-in-out;
 }
 
 
-
-
-/* 
-.ascii {
-  font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    background-color: black;
-    letter-spacing: 4px;
-    line-height: 12px;
-    color: #FA4C14;
-    padding: 20px;
-    padding-left: 40%;
-} */
 
 
 
@@ -309,8 +296,8 @@ canvas {
 }
 
 .oswald-gif-wrap {
-  width: 90px; /* adjust the width of the GIF */
-  height: 90px; /* adjust the height of the GIF */
+  width: 90px; 
+  height: 90px; 
   margin-right: 20px;
 }
 
@@ -321,7 +308,7 @@ canvas {
 }
 
 .oswald-text-block {
-  flex: 1; /* take up the remaining space */
+  flex: 1; 
 }
 
 .oswald-text-block h2 {
@@ -382,20 +369,20 @@ footer a:hover {
 }
 
 .link-container {
-  flex-direction: column; /* Расположение элементов по столбцам */
-  width: 10px; /* Ширина контейнера */
-  word-wrap: break-word; /* Перенос слов на новую строку */
+  flex-direction: column; 
+  width: 10px; 
+  word-wrap: break-word; 
 }
 
 
 footer a {
-  color:  black; /* цвет текста ссылок */
-  text-decoration: none; /* убираем подчеркивание ссылок */
-  transition: color 0.2s ease; /* добавляем эффект анимации при наведении */
+  color:  black; 
+  text-decoration: none; 
+  transition: color 0.2s ease; 
 }
 
 footer a:hover {
-  color:antiquewhite; /* цвет текста ссылок при наведении */
+  color:antiquewhite; 
 }
 
 .full-width-block {
@@ -404,7 +391,7 @@ footer a:hover {
 }
 
 .full-width-block img {
-  width: 20%; /* adjust the width of the image */
+  width: 20%; 
 }
 
 .text-block {
@@ -476,39 +463,21 @@ footer a:hover {
         }
         
     }
-/* 
-    @media (max-width: 961px) {
-        #greeting {
-            display: none;
-        }
-        
-    }
 
-    @media (min-width: 961px) {
-        #greetingPhone {
-            display: none;
-        }
-        
-    } */
-
-    /* Hide scrollbar in Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-/* Hide scrollbar in Firefox */
 html {
   overflow-y: scroll;
   scrollbar-width: none;
 }
 
-/* Hide scrollbar in Internet Explorer and Edge */
 body {
   -ms-overflow-style: none;
 }
 
-/* Hide scrollbar in all browsers (including mobile) */
 .pre {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -542,4 +511,79 @@ body {
   margin-left: 5px;
   line-height: 25px;
   font-size: x-large;
+}
+
+
+
+
+
+
+.resume-holder {
+  width: 800px; 
+  height: 100px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0; 
+  margin: 0; 
+  border-radius: 5px;
+  border: 2px dashed #272727;
+  margin: 0 auto;
+}
+
+.resume-holder button {
+  width: 20%; 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+  border: none; 
+  cursor: pointer; 
+  font-family: 'VT323', monospace;
+  color: antiquewhite;
+  background-color: #000000;
+  font-size: x-large;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+  color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+  transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resume-holder button:hover {
+  background-color: #FA4C14;
+  color: black;
+  transform: scale(1.01); 
+}
+
+.resume-holder-people {
+  border: 2px dashed #272727;
+  width: 25%;
+  margin: 20px;
+  display: inline-block;
+  text-align: left; 
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: large;
+  border-radius: 5px;
+}
+
+.tooltip {
+  position: absolute; 
+  visibility: hidden; 
+  opacity: 0; 
+  width: 400px; 
+  padding: 10px; 
+  border: 1px solid antiquewhite; 
+  border-radius: 5px; 
+  background-color: #000000; 
+  border-radius: 5px;
+  transition: opacity 0.5s, visibility 0.5s; 
+}
+
+.tooltip-button:hover + .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:hover {
+  visibility: visible; 
+  opacity: 1;
 }
