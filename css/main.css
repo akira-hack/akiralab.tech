@@ -587,3 +587,19 @@ body {
   visibility: visible; 
   opacity: 1;
 }
+
+
+svg {
+  width: 100%;
+}
+
+svg path {
+  cursor: pointer;
+  transition: fill 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+  color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+  transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+svg path:hover {
+  fill: #FA4C14;
+}
