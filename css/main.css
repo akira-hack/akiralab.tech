@@ -603,3 +603,12 @@ svg path {
 svg path:hover {
   fill: #FA4C14;
 }
+
+.country-name-block {
+  display: none;
+  position: absolute;
+  background-color: #272727;
+  padding: 10px;
+  border: 1px solid #FA4C14;
+  pointer-events: none; /* add this to prevent the tooltip from interfering with mouse events */
+}

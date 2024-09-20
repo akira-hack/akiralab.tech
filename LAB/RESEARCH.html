@@ -26,15 +26,13 @@
         </ul>
       </nav>
      <div style="text-align: center;">
-        <p style="color: #FA4C14;font-family:'Jersey 15', sans-serif; font-size: xx-large;">GUTTER</p>
+        <p style="color: #FA4C14;font-family:'Jersey 15', sans-serif; font-size: xx-large;">THE_GUTTER</p>
         <p style="font-size: x-large;">created by JENK1N5 feat. AKIRA </p>
         <p style="font-size: large;">the terrifying project of a freedom ambassador and a Chinese hacker<br>comments are unnecessary</p>
     </div>
 
 
-    <div class="CountryName">
-      
-    </div>
+
 
 <svg baseprofile="tiny" fill="antiquewhite" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2" version="1.2" viewbox="0 0 2000 857" xmlns="http://www.w3.org/2000/svg">
  <path d="M1383 261.6l1.5 1.8-2.9 0.8-2.4 1.1-5.9 0.8-5.3 1.3-2.4 2.8 1.9 2.7 1.4 3.2-2 2.7 0.8 2.5-0.9 2.3-5.2-0.2 3.1 4.2-3.1 1.7-1.4 3.8 1.1 3.9-1.8 1.8-2.1-0.6-4 0.9-0.2 1.7-4.1 0-2.3 3.7 0.8 5.4-6.6 2.7-3.9-0.6-0.9 1.4-3.4-0.8-5.3 1-9.6-3.3 3.9-5.8-1.1-4.1-4.3-1.1-1.2-4.1-2.7-5.1 1.6-3.5-2.5-1 0.5-4.7 0.6-8 5.9 2.5 3.9-0.9 0.4-2.9 4-0.9 2.6-2-0.2-5.1 4.2-1.3 0.3-2.2 2.9 1.7 1.6 0.2 3 0 4.3 1.4 1.8 0.7 3.4-2 2.1 1.2 0.9-2.9 3.2 0.1 0.6-0.9-0.2-2.6 1.7-2.2 3.3 1.4-0.1 2 1.7 0.3 0.9 5.4 2.7 2.1 1.5-1.4 2.2-0.6 2.5-2.9 3.8 0.5 5.4 0z" id="AF" name="Afghanistan">
@@ -985,6 +983,27 @@
  </circle>
 </svg>
     
+
+<div class="country-name-block"></div>
+
+<script>
+const svg = document.querySelector('svg');
+const countryNameBlock = document.querySelector('.country-name-block');
+
+svg.addEventListener('mousemove', (event) => {
+  const target = event.target;
+  if (target.tagName === 'path') {
+    const countryName = target.getAttribute('name') || target.getAttribute('class');
+    const rect = target.getBoundingClientRect();
+    countryNameBlock.textContent = countryName;
+    countryNameBlock.style.display = 'block';
+    countryNameBlock.style.top = `${rect.top + 20}px`;
+    countryNameBlock.style.left = `${rect.left + 20}px`;
+  } else {
+    countryNameBlock.style.display = 'none';
+  }
+});
+</script>
 <div style="margin-top: 300px;">
 <div style="width: 800px; margin: 0 auto;">
 <p style="color: #585858; text-align: center;">&lt----DISCLAIMER----&gt<br>AKIRA, as an association of engineers, assumes no responsibility for the accuracy of the information on this page. The creators and moderators are only indirectly related to this resource, being a platform for free placement of any information for our partners. AKIRA declines all responsibility, placing it on the shoulders of the above-mentioned JENK1N5. He, of his own free will, in good health and mind, assumes all possible problems and risks associated with the publication of information. All commits on his behalf will be specially labeled to specifically show the difference in who pours information on the resource, as it has access to a dozen more administrators, some of whom do not agree with JENK1N5. However, the consilium and investors of the resource decided to publish his work, considering it suitable for the subject of the resource. For any questions of authorship, as well as unreliable information, please contact the contacts on the main page. The information will be promptly transferred to JENK1N5.</p>
