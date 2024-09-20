@@ -612,3 +612,12 @@ svg path:hover {
   border: 1px solid #FA4C14;
   pointer-events: none; /* add this to prevent the tooltip from interfering with mouse events */
 }
+
+#loading-screen {
+  transition: opacity 1s;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}

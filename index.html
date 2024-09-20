@@ -20,11 +20,23 @@
   <div id="HOME"></div>
 
   <div id="loading-screen">
-    <video id="loading-video" autoplay onended="this.parentNode.style.opacity='0'; this.parentNode.style.transition='opacity 1s'; this.parentNode.style.pointerEvents='none'; setTimeout(function(){this.parentNode.style.display='none';}, 1000);">
+    <video id="loading-video" autoplay>
       <source src="./img/oswald_gif.mp4" type="video/mp4">
     </video>
   </div>
   
+<script>
+  const loadingScreen = document.getElementById('loading-screen');
+const loadingVideo = document.getElementById('loading-video');
+
+loadingVideo.addEventListener('ended', () => {
+  loadingScreen.classList.add('fade-out');
+  setTimeout(() => {
+    loadingScreen.style.display = 'none';
+  }, 1000);
+});
+</script>
+
   <nav class="navbar">
     <ul class="navbar-nav">
       <span style="color: #FA4C14;font-family:'Jersey 15', sans-serif; font-size: 30px; margin-right: 30px;">AKIRA</span>
