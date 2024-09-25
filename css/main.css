@@ -43,10 +43,6 @@ header {
   }
 
 
-
-
-
-
 #loading-screen {
   position: fixed;
   top: 0;
@@ -247,8 +243,7 @@ canvas {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateY(100%); 
-  transition: transform 0.5s ease-in-out;
+
 }
 
 
@@ -256,7 +251,7 @@ canvas {
 
 
 
-.parallax-img {
+/* .parallax-img {
   width: auto;
   height: auto;
   z-index: 9998;
@@ -284,7 +279,7 @@ canvas {
     max-width: 100%;
     height: auto;
   }
-}
+} */
 
 
 .oswald-container {
