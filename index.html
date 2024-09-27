@@ -22,7 +22,7 @@
   <div id="HOME"></div>
 
   <div id="loading-screen">
-    <video id="loading-video" autoplay>
+    <video id="loading-video" autoplay muted playsinline>
       <source src="./img/oswald_gif.mp4" type="video/mp4">
     </video>
   </div>
@@ -360,14 +360,14 @@ function changeText() {
 changeText();
         </script>
 
-  <script>
+  <!-- <script>
       const parallaxImg = document.querySelector('.parallax-img');
     window.addEventListener('scroll', () => {
       const scrollPosition = window.scrollY;
       const parallaxDistance = scrollPosition * 0.2;
       parallaxImg.style.transform = `translateY(-${parallaxDistance}px)`;
     });
-  </script>
+  </script> -->
 
 
 
