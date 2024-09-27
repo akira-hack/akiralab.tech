@@ -153,11 +153,6 @@ canvas {
 
 
 
-
-
-
-
-
 .navbar {
   position: fixed; 
   top: 0;
@@ -181,7 +176,7 @@ canvas {
 .navbar-nav li {
   margin-right: 30px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: large;
 }
 
 .navbar-nav a {

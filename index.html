@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 
-<!--Special thanks to dragonfly and HeronPreston for the wonderful templates and great taste (#FA4C14)-->
+<!--Special thanks to dragonfly, HeronPreston and MIAO for the wonderful templates and great taste (#FA4C14)-->
 
 <html lang="en">
 <head>
-  <noscript>
-    <meta http-equiv="refresh" content="0; url=./no-js.html">
-  </noscript>
+    <noscript><meta http-equiv="refresh" content="0; url=./no-js.html"></noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AKIRA</title>
@@ -16,10 +14,19 @@
     <link rel="stylesheet" type="text/css"             href="css/main.css"/>
     <link href="assets/css/style.css" rel="stylesheet">
     <script async="" src="assets/js/main.js" defer=""></script>
+    <script>  
+      setInterval(function () {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var clock = document.getElementById("clock");
+        clock.innerHTML = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }, 1000);
+    </script>
 </head>
 
 <body>
-  <div id="HOME"></div>
 
   <div id="loading-screen">
     <video id="loading-video" autoplay muted playsinline>
@@ -45,23 +52,23 @@ loadingVideo.addEventListener('ended', () => {
       <li><a href="#MANIFESTO">2_MANIFESTO</a></li>
       <li><a href="#ABOUT">3_ABOUT</a></li>
       <li><a href="#LAB">4_LAB</a></li>
-      <!-- <li><a href="./LAB/SHOP.html">5_SHOP</a></li> -->
+      <!-- <span id="clock" style="color: antiquewhite;"></span> -->
     </ul>
   </nav>
 
     <header>
         <pre class="headerPreMax"></pre>
         <pre class="headerPreMin"> 
-   _   _  _____ ___    _   
-  /_\ | |/ /_ _| _ \  /_\  
- / _ \| ' < | ||   / / _ \ 
-/_/ \_\_|\_\___|_|_\/_/ \_\
+ _____ _____ _____ _____ _____ 
+|  _  |  |  |     | __  |  _  |
+|     |    -|-   -|    -|     |
+|__|__|__|__|_____|__|__|__|__|
 <p>404_AND_ERROR</p>
         </pre>
 
     </header>
 
-      <script> 
+      <!-- <script> 
 function runningline(msg, ctrlwidth) {
   const container = document.createElement('div');
   container.style.width = `${ctrlwidth}px`;
@@ -91,7 +98,7 @@ function runningline(msg, ctrlwidth) {
 }
 
 runningline("AKIRA ", 10000);
-            </script>
+            </script> -->
             
     <div class="PHONE" style="text-align: center; margin: 0 auto; max-width: 80%; padding: 20px;">
       <h2 style="color: #FA4C14;">not available on phones or devices with this resolution</h2>
@@ -220,7 +227,7 @@ runningline("AKIRA ", 10000);
           </div>
         </div>
 
-        <div id="ABOUT" style=" display: flex; flex-direction: row; width: 100%; padding-top: 140px; text-align: center;">
+        <div style=" display: flex; flex-direction: row; width: 100%; padding-top: 140px; text-align: center;">
           <div style="margin: 10px; width: 300px; height: 700px; background-color: #FA4C14; clip-path: polygon(0 0, 100% 0, 100% 86%, 65% 100%, 0 100%); border-radius: 5px;">
             <div style="margin: 10%; border: 1.5px solid black; border-radius: 10px; "><img src="./img/b70281b47c87eb948628885f0062a052.gif" style="width: 70%;"></div>
             <p style="font-size: xx-large; font-family: 'Jersey 15', sans-serif; color: black;">AKIRA</p>
@@ -230,27 +237,25 @@ runningline("AKIRA ", 10000);
             <p style="float: left; margin-left: 10%; color: black; font-family: 'Jersey 15', sans-serif; color: black;">AKIRALAB.TECH</p>
           </div>
 
-          <div style="margin: 10px; width: 60%; height: 600px; border: 1px solid antiquewhite; border-radius: 5px; ">
-            <p class="greeting_hlwrld" style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 30px; padding-top: 40px; padding-left: 15%;">WHAT_IS_AKIRA</p>
-            <ul style="list-style: square; text-align: left; font-size: x-large;">
-              <li>General, including scientific, research and articles in the field of information security</li>
+          <div style="margin: 10px; width: 60%; height: 600px; border: 1px solid antiquewhite; border-radius: 5px; line-height: 25px;">
+            <p class="greeting_hlwrld" style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 40px; padding-top: 20px; padding-left: 15%;">PORTFOLIO</p>
+            <ul style="list-style: square; text-align: left; font-size: x-large; margin-right: 10px;">
+              <li>GENERAL:</li>
               <p></p>
-              <li>Creation, improvement and customisation of tools to check and protect against hacker attacks</li>
+              <li>LANGUAGES:</li>
               <p></p>
-              <li>Manual as well as automated hacking of resources and devises of any complexity</li>
+              <li>SKILLS:</li>
               <p></p>
-              <li>Physically scanning for vulnerabilities in sensitive targets like secured facilities and serverrooms, as well as their defence</li>
+              <li>SIDE ABILITIES:</li>
               <p></p>
-              <li>Creation and improvement of existing engineering devices related to information security</li>
-              <p></p>
-              <li>Information security and technology literacy education for teenagers. Teaching both technical aspects and, directly, hacking and protection</li>
-          </ul>
+              <li>CAREERS:</li>
+            </ul>
           </div>
 
           <div style="margin: 10px; width: 25%; height: 600px;">
             <p style=" width: 15%; padding-left: 5%; color: black; font-size: x-large;"><span style="background-color: #FA4C14;">STATS</span></p>
             <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
-            <p style=" width: 70%; padding-left: 5%; font-size: x-large;"><span style="color: #FA4C14;">19</span><br><span>PRODUCTS INVENTED AND PRODUCED</span></p>
+            <p style=" width: 70%; padding-left: 5%; font-size: x-large;"><span style="color: #FA4C14;">19</span><br><span>PRODUCTS INVENTED, PRODUCED AND DEVELOPED</span></p>
             <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
             <p style=" width: 70%; padding-left: 5%; font-size: x-large;"><span style="color: #FA4C14;">43</span><br><span>COMPANIES HACKED</span></p>
             <p style="border-bottom: 1.5px dashed #272727; width: 70%; padding-left: 5%;"></p>
@@ -281,13 +286,13 @@ runningline("AKIRA ", 10000);
         8
         8</pre>
 
-        <div class="oswald-container">
+        <div class="oswald-container" style="line-height: 25px;">
           <div class="oswald-gif-wrap">
             <img src="./img/oswald_blink.gif" alt="GIF">
           </div>
           <div class="oswald-text-block">
             <h2>OSWALD</h2>
-            <p>Introducing this unpretentious handsome - our mascot. Sophisticated symbolism is an illusion imposed by corporations and culture. So we decided to go with a simple bunny. He's cute</p>
+            <p>Introducing this unpretentious handsome - my mascot. Sophisticated symbolism is an illusion imposed by corporations and culture. So I decided to go with a simple bunny. He's cute</p>
           </div>
         </div>
 
@@ -309,7 +314,7 @@ runningline("AKIRA ", 10000);
             </div> -->
 
 <!-- FOOTER -->
-    <p style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14 ; font-size: 40px; padding-top: 140px; padding-left: 2%;">CONTACT_US</p>
+    <!-- <p style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14 ; font-size: 40px; padding-top: 140px; padding-left: 2%;">CONTACT_US</p>
     <footer>
       <div class="container">
         <ul class="footer-links">
@@ -323,7 +328,7 @@ runningline("AKIRA ", 10000);
     <span style="float: left; color: #313131;">HACKING_COMPANY</span>
     <span style="position: absolute; left: 50%; transform: translateX(-50%); color: #313131;">2018-2025</span>
     <span style="float: right; color: #313131;">&copy;AKIRALAB</span>
-  <div id="LAB"></div>
+  <div id="LAB"></div> -->
 
 
                         <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ JAVASCRIPT $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
@@ -569,21 +574,21 @@ var asciis = [[
 "████████  ███████",
 "  █████████████",
 ],
-[
-"    \\    |  /_ _|  _ \\     \\   ",
-"   _ \\   ' /   |  |   |   _ \\  ",
-"  ___ \\  . \\   |  __ <   ___ \\ ",
-"_/    _\\_|\\_\\___|_| \\_\\_/    _\\",
-],
-[ 
-"       ▄▄▀▀▀▀▄▄      ",
-"      █        █     ",
-"     █ ▄▀█  █▀▄ █    ",
-"    ▐▌          ▐▌   ",
-"    █▌▀▄  ▄▄  ▄▀▐█   ",
-"   ▐██  ▀▀  ▀▀  ██▌  ",
-"  ▄████▄  ▐▌  ▄████▄ ",
-],
+// [
+// "    \\    |  /_ _|  _ \\     \\   ",
+// "   _ \\   ' /   |  |   |   _ \\  ",
+// "  ___ \\  . \\   |  __ <   ___ \\ ",
+// "_/    _\\_|\\_\\___|_| \\_\\_/    _\\",
+// ],
+// [ 
+// "       ▄▄▀▀▀▀▄▄      ",
+// "      █        █     ",
+// "     █ ▄▀█  █▀▄ █    ",
+// "    ▐▌          ▐▌   ",
+// "    █▌▀▄  ▄▄  ▄▀▐█   ",
+// "   ▐██  ▀▀  ▀▀  ██▌  ",
+// "  ▄████▄  ▐▌  ▄████▄ ",
+// ],
 [
 " ______     __  __     __     ______     ______   ",
 "/\\  __ \\   /\\ \\/ /    /\\ \\   /\\  == \\   /\\  __ \\  ",
