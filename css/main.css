@@ -589,6 +589,30 @@ svg path {
   color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
   transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+  
+.Canada {
+  fill: #FA4C14;
+}
+
+.Russia {
+  fill: #FA4C14;
+}
+
+.Japan {
+  fill: #FA4C14;
+}
+
+.Norway {
+  fill: #FA4C14;
+}
+
+.Turkey {
+  fill: #FA4C14;
+}
+
+.USA {
+  fill: #FA4C14;
+}
 
 svg path:hover {
   fill: #FA4C14;
