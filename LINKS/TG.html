@@ -19,7 +19,7 @@
 
 <body>
   <div id="loading-screen">
-    <video id="loading-video" autoplay>
+    <video id="loading-video" autoplay muted playsinline>
       <source src="./img/oswald_gif.mp4" type="video/mp4">
     </video>
   </div>
@@ -35,6 +35,7 @@ loadingVideo.addEventListener('ended', () => {
   }, 1000);
 });
 </script>
+
   
   <nav class="navbar">
     <ul class="navbar-nav">
