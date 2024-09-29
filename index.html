@@ -252,7 +252,7 @@ runningline("AKIRA ", 10000);
         </div>
 
         <div style="width: 70%; margin: 0 auto; border: 1px solid antiquewhite; border-radius: 5px; line-height: 25px; display: flex; justify-content: space-between; padding: 10px; margin-top: 150px;">
-          <p style="font-size: large; width: 30%;"><span style="color: #FA4C14; font-size: x-large;">WORLDWIDE</span><br>I work with the whole world and believe that access to information, knowledge and skills should be open. The human mind has no boundaries.</p>
+          <p style="font-size: x-large; width: 30%;"><span style="color: #FA4C14; font-size: xx-large;">WORLDWIDE</span><br>I work with the whole world and believe that access to information, knowledge and skills should be open. The human mind has no boundaries.</p>
           <svg baseprofile="tiny" fill="antiquewhite" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2" version="1.2" viewbox="0 0 2000 857">
           <path d="M1383 261.6l1.5 1.8-2.9 0.8-2.4 1.1-5.9 0.8-5.3 1.3-2.4 2.8 1.9 2.7 1.4 3.2-2 2.7 0.8 2.5-0.9 2.3-5.2-0.2 3.1 4.2-3.1 1.7-1.4 3.8 1.1 3.9-1.8 1.8-2.1-0.6-4 0.9-0.2 1.7-4.1 0-2.3 3.7 0.8 5.4-6.6 2.7-3.9-0.6-0.9 1.4-3.4-0.8-5.3 1-9.6-3.3 3.9-5.8-1.1-4.1-4.3-1.1-1.2-4.1-2.7-5.1 1.6-3.5-2.5-1 0.5-4.7 0.6-8 5.9 2.5 3.9-0.9 0.4-2.9 4-0.9 2.6-2-0.2-5.1 4.2-1.3 0.3-2.2 2.9 1.7 1.6 0.2 3 0 4.3 1.4 1.8 0.7 3.4-2 2.1 1.2 0.9-2.9 3.2 0.1 0.6-0.9-0.2-2.6 1.7-2.2 3.3 1.4-0.1 2 1.7 0.3 0.9 5.4 2.7 2.1 1.5-1.4 2.2-0.6 2.5-2.9 3.8 0.5 5.4 0z" id="AF" name="Afghanistan">
           </path>
@@ -1202,6 +1202,7 @@ runningline("AKIRA ", 10000);
           </circle>
          </svg>
         </div>
+
            <p class="greeting_hlwrld" style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 35px; padding-top: 140px; padding-left: 25%;">CONTACT_ME</p>
           <div class="button-container" style="border: 2px dashed #272727; border-radius: 8px; width: 50%; margin: 0 auto;">
               <button class="big-button" onclick="location.href='./LINKS/MX.html'">
@@ -1212,22 +1213,290 @@ runningline("AKIRA ", 10000);
               </button>
             </div>
 
+            <div>
+              <canvas></canvas>
+            </div>
+            
+            <script>
+              const canvas = document.querySelector("canvas");
+const gl = canvas.getContext("webgl");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+gl.viewport(0, 0, canvas.width, canvas.height);
+
+// Configurable parameters
+const config = {
+	particleCount: 5000,
+	textArray: ["TIM.", "ENGINEER.", "Coffee."],
+	mouseRadius: 0.1,
+	particleSize: 2,
+	forceMultiplier: 0.001,
+	returnSpeed: 0.005,
+	velocityDamping: 0.95,
+	colorMultiplier: 40000,
+	saturationMultiplier: 1000,
+	textChangeInterval: 10000,
+	rotationForceMultiplier: 0.5
+};
+
+let currentTextIndex = 0;
+let nextTextTimeout;
+let textCoordinates = [];
+
+const mouse = {
+	x: -500,
+	y: -500,
+	radius: config.mouseRadius
+};
+
+const particles = [];
+for (let i = 0; i < config.particleCount; i++) {
+	particles.push({ x: 0, y: 0, baseX: 0, baseY: 0, vx: 0, vy: 0 });
+}
+
+const vertexShaderSource = `
+    attribute vec2 a_position;
+    attribute float a_hue;
+    attribute float a_saturation;
+    varying float v_hue;
+    varying float v_saturation;
+    void main() {
+        gl_PointSize = ${config.particleSize.toFixed(1)};
+        gl_Position = vec4(a_position, 0.0, 1.0);
+        v_hue = a_hue;
+        v_saturation = a_saturation;
+    }
+`;
+
+const fragmentShaderSource = `
+    precision mediump float;
+    varying float v_hue;
+    varying float v_saturation;
+    void main() {
+        float c = v_hue * 6.0;
+        float x = 1.0 - abs(mod(c, 2.0) - 1.0);
+        vec3 color;
+        if (c < 1.0) color = vec3(1.0, x, 0.0);
+        else if (c < 2.0) color = vec3(x, 1.0, 0.0);
+        else if (c < 3.0) color = vec3(0.0, 1.0, x);
+        else if (c < 4.0) color = vec3(0.0, x, 1.0);
+        else if (c < 5.0) color = vec3(x, 0.0, 1.0);
+        else color = vec3(1.0, 0.0, x);
+        vec3 finalColor = mix(vec3(1.0), color, v_saturation);
+        gl_FragColor = vec4(finalColor, 1.0);
+    }
+`;
+
+function createShader(gl, type, source) {
+	const shader = gl.createShader(type);
+	gl.shaderSource(shader, source);
+	gl.compileShader(shader);
+	if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+		console.error(gl.getShaderInfoLog(shader));
+		gl.deleteShader(shader);
+		return null;
+	}
+	return shader;
+}
+
+function createProgram(gl, vertexShader, fragmentShader) {
+	const program = gl.createProgram();
+	gl.attachShader(program, vertexShader);
+	gl.attachShader(program, fragmentShader);
+	gl.linkProgram(program);
+	if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+		console.error(gl.getProgramInfoLog(program));
+		gl.deleteProgram(program);
+		return null;
+	}
+	return program;
+}
+
+const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+const fragmentShader = createShader(
+	gl,
+	gl.FRAGMENT_SHADER,
+	fragmentShaderSource
+);
+const program = createProgram(gl, vertexShader, fragmentShader);
+
+const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
+const hueAttributeLocation = gl.getAttribLocation(program, "a_hue");
+const saturationAttributeLocation = gl.getAttribLocation(
+	program,
+	"a_saturation"
+);
+
+const positionBuffer = gl.createBuffer();
+const hueBuffer = gl.createBuffer();
+const saturationBuffer = gl.createBuffer();
+
+const positions = new Float32Array(config.particleCount * 2);
+const hues = new Float32Array(config.particleCount);
+const saturations = new Float32Array(config.particleCount);
+
+function getTextCoordinates(text) {
+	const ctx = document.createElement("canvas").getContext("2d");
+	ctx.canvas.width = canvas.width;
+	ctx.canvas.height = canvas.height;
+	const fontSize = Math.min(canvas.width / 6, canvas.height / 6);
+	ctx.font = `900 ${fontSize}px Arial`;
+	ctx.fillStyle = "white";
+	ctx.textAlign = "center";
+	ctx.textBaseline = "middle";
+	ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+	const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+	const coordinates = [];
+	for (let y = 0; y < canvas.height; y += 4) {
+		for (let x = 0; x < canvas.width; x += 4) {
+			const index = (y * canvas.width + x) * 4;
+			if (imageData[index + 3] > 128) {
+				coordinates.push({
+					x: (x / canvas.width) * 2 - 1,
+					y: (y / canvas.height) * -2 + 1
+				});
+			}
+		}
+	}
+	return coordinates;
+}
+
+function createParticles() {
+	textCoordinates = getTextCoordinates(config.textArray[currentTextIndex]);
+	for (let i = 0; i < config.particleCount; i++) {
+		const randomIndex = Math.floor(Math.random() * textCoordinates.length);
+		const { x, y } = textCoordinates[randomIndex];
+		particles[i].x = particles[i].baseX = x;
+		particles[i].y = particles[i].baseY = y;
+	}
+}
+function updateParticles() {
+	for (let i = 0; i < config.particleCount; i++) {
+		const particle = particles[i];
+		const dx = mouse.x - particle.x;
+		const dy = mouse.y - particle.y;
+		const distance = Math.sqrt(dx * dx + dy * dy);
+		const forceDirectionX = dx / distance;
+		const forceDirectionY = dy / distance;
+		const maxDistance = mouse.radius;
+		const force = (maxDistance - distance) / maxDistance;
+		const directionX = forceDirectionX * force * config.forceMultiplier;
+		const directionY = forceDirectionY * force * config.forceMultiplier;
+
+		const angle = Math.atan2(dy, dx);
+
+		const rotationForceX = Math.sin(
+			-Math.cos(angle * -1) *
+				Math.sin(config.rotationForceMultiplier * Math.cos(force)) *
+				Math.sin(distance * distance) *
+				Math.sin(angle * distance)
+		);
+
+		const rotationForceY = Math.sin(
+			Math.cos(angle * 1) *
+				Math.sin(config.rotationForceMultiplier * Math.sin(force)) *
+				Math.sin(distance * distance) *
+				Math.cos(angle * distance)
+		);
+
+		if (distance < mouse.radius) {
+			particle.vx -= directionX + rotationForceX;
+			particle.vy -= directionY + rotationForceY;
+		} else {
+			particle.vx += (particle.baseX - particle.x) * config.returnSpeed;
+			particle.vy += (particle.baseY - particle.y) * config.returnSpeed;
+		}
+
+		particle.x += particle.vx;
+		particle.y += particle.vy;
+		particle.vx *= config.velocityDamping;
+		particle.vy *= config.velocityDamping;
+
+		const speed = Math.sqrt(
+			particle.vx * particle.vx + particle.vy * particle.vy
+		);
+		const hue = (speed * config.colorMultiplier) % 360;
+
+		hues[i] = hue / 360;
+		saturations[i] = Math.min(speed * config.saturationMultiplier, 1);
+		positions[i * 2] = particle.x;
+		positions[i * 2 + 1] = particle.y;
+	}
+	gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+	gl.bufferData(gl.ARRAY_BUFFER, positions, gl.DYNAMIC_DRAW);
+	gl.bindBuffer(gl.ARRAY_BUFFER, hueBuffer);
+	gl.bufferData(gl.ARRAY_BUFFER, hues, gl.DYNAMIC_DRAW);
+	gl.bindBuffer(gl.ARRAY_BUFFER, saturationBuffer);
+	gl.bufferData(gl.ARRAY_BUFFER, saturations, gl.DYNAMIC_DRAW);
+}
+
+function animate() {
+	updateParticles();
+
+	gl.clear(gl.COLOR_BUFFER_BIT);
+	gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+	gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+	gl.enableVertexAttribArray(positionAttributeLocation);
+	gl.bindBuffer(gl.ARRAY_BUFFER, hueBuffer);
+	gl.vertexAttribPointer(hueAttributeLocation, 1, gl.FLOAT, false, 0, 0);
+	gl.enableVertexAttribArray(hueAttributeLocation);
+	gl.bindBuffer(gl.ARRAY_BUFFER, saturationBuffer);
+	gl.vertexAttribPointer(saturationAttributeLocation, 1, gl.FLOAT, false, 0, 0);
+	gl.enableVertexAttribArray(saturationAttributeLocation);
+	gl.useProgram(program);
+	gl.drawArrays(gl.POINTS, 0, config.particleCount);
+	requestAnimationFrame(animate);
+}
+
+canvas.addEventListener("mousemove", (event) => {
+	mouse.x = (event.clientX / canvas.width) * 2 - 1;
+	mouse.y = (event.clientY / canvas.height) * -2 + 1;
+});
+
+canvas.addEventListener("mouseleave", () => {
+	mouse.x = -500;
+	mouse.y = -500;
+});
+
+window.addEventListener("resize", () => {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	gl.viewport(0, 0, canvas.width, canvas.height);
+	createParticles();
+});
+
+function changeText() {
+	currentTextIndex = (currentTextIndex + 1) % config.textArray.length;
+	const newCoordinates = getTextCoordinates(config.textArray[currentTextIndex]);
+	for (let i = 0; i < config.particleCount; i++) {
+		const randomIndex = Math.floor(Math.random() * newCoordinates.length);
+		const { x, y } = newCoordinates[randomIndex];
+		particles[i].baseX = x;
+		particles[i].baseY = y;
+	}
+	nextTextTimeout = setTimeout(changeText, config.textChangeInterval);
+}
+
+gl.clearColor(0, 0, 0, 1);
+createParticles();
+animate();
+nextTextTimeout = setTimeout(changeText, config.textChangeInterval);
+
+            </script>
+
+            
     <p style="color: #585858; margin: 0 auto; width: 60%; text-align: center; margin-top: 40px;">&lt----EPILOGUE----&gt<br>Cybersecurity is an integral force in my life. It has raised me and has become a formative element of my identity.<br>From the moment I learned to type to the present day.</p>
     <span style="float: left; color: #313131;">CYBERSECURITY ENGINEER</span>
     <span style="position: absolute; left: 50%; transform: translateX(-50%); color: #313131;">2025</span>
     <span style="float: right; color: #313131;">&copy;AKIRALAB.TECH</span>
     <div style="background-color: #FA4C14; width: 100%; height: 15px; margin-top: 22px;"></div>
-    
-  
       </div>
 
                         <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ JAVASCRIPT $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   
 
-       <script
-      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=61c4e3ebcae2b7238fbb8501"
-      type="text/javascript"
-      crossorigin="anonymous"></script>                     
+             
   <script>
         const parallaxContainer = document.querySelector('.parallax-container');
 const parallaxImage = document.querySelector('.parallax-image');
