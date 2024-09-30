@@ -238,7 +238,6 @@ canvas {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 
@@ -590,27 +589,7 @@ svg path {
   transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
   
-.Canada {
-  fill: #FA4C14;
-}
-
-.Russia {
-  fill: #FA4C14;
-}
-
-.Japan {
-  fill: #FA4C14;
-}
-
-.Norway {
-  fill: #FA4C14;
-}
-
-.Turkey {
-  fill: #FA4C14;
-}
-
-.USA {
+.Norway,.Japan,.Russia,.Canada,.Azerbaijan,.ENG,.Philippines,.France,#BA,#CZ,#FI,#GE,#DE,#BY,#ES,#QA,#SA,#IQ,#CU{
   fill: #FA4C14;
 }
 
@@ -636,3 +615,26 @@ svg path:hover {
   pointer-events: none;
 }
 
+
+
+.gridblock {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+    
+  width: 26vmin;
+  height: 10vmin;
+
+  .gridblockspan {
+    --rotate: -10deg;
+    
+    display: block;
+    width: 0.5vmin;
+    height: 3vmin;
+    
+    background-color: #272727;
+    
+    will-change: transform;
+    transform: rotate(var(--rotate));
+  }
+}
