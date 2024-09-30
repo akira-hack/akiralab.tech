@@ -629,8 +629,8 @@ svg path:hover {
     --rotate: -10deg;
     
     display: block;
-    width: 0.5vmin;
-    height: 3vmin;
+    width: 0.2vmin;
+    height: 2vmin;
     
     background-color: #272727;
     
