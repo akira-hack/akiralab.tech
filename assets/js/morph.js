@@ -618,7 +618,7 @@ const getAsciiOutput = (canvas, ctx) => {
             output.innerHTML += '</div>';
         }
 
-        output += char == ascii[0] ? `<span style="color: #444">${char}</span>` : char;
+        output += char == ascii[0] ? `<span style="color: #FA4C14">${char}</span>` : char;
     }
 
     return output;
