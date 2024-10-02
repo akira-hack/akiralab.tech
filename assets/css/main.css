@@ -244,38 +244,6 @@ canvas {
 
 
 
-
-/* .parallax-img {
-  width: auto;
-  height: auto;
-  z-index: 9998;
-  transition: transform 0.5s ease-out;
-  padding-top: 200px;
-}
-
-@media (max-width: 767px) {
-  .parallax-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    transform: scale(1);
-    z-index: 9998;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .parallax-img img {
-    max-width: 100%;
-    height: auto;
-  }
-} */
-
-
 .oswald-container {
   display: flex;
   align-items: center;
@@ -311,68 +279,6 @@ canvas {
   color: antiquewhite;
 }
 
-
-
-footer .right-text {
-
-  position: relative;
-
-  right: 0;
-
-  top: 0;
-
-}
-
-footer {
-  color: antiquewhite;
-  padding: 1px;
-  text-align: left;
-  font-size: 27px;
-}
-
-
-footer .container {
-  max-width: 180px;
-  margin-left: 2%;
-  background-color: #FA4C14;
-  border-radius: 5px;
-}
-
-footer ul.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-
-footer a {
-  color: antiquewhite;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #FA4C14;
-}
-
-.link-container {
-  flex-direction: column; 
-  width: 10px; 
-  word-wrap: break-word; 
-}
-
-
-footer a {
-  color:  black; 
-  text-decoration: none; 
-  transition: color 0.2s ease; 
-}
-
-footer a:hover {
-  color:antiquewhite; 
-}
 
 .full-width-block {
   width: 100%;
@@ -503,81 +409,6 @@ body {
 }
 
 
-
-
-
-
-.resume-holder {
-  width: 800px; 
-  height: 100px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 0; 
-  margin: 0; 
-  border-radius: 5px;
-  border: 2px dashed #272727;
-  margin: 0 auto;
-}
-
-.resume-holder button {
-  width: 20%; 
-  height: 100%; 
-  margin: 0; 
-  padding: 0; 
-  border: none; 
-  cursor: pointer; 
-  font-family: 'VT323', monospace;
-  color: antiquewhite;
-  background-color: #000000;
-  font-size: x-large;
-  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-  color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-  transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.resume-holder button:hover {
-  background-color: #FA4C14;
-  color: black;
-  transform: scale(1.01); 
-}
-
-.resume-holder-people {
-  border: 2px dashed #272727;
-  width: 25%;
-  margin: 20px;
-  display: inline-block;
-  text-align: left; 
-  padding-left: 20px;
-  padding-bottom: 20px;
-  font-size: large;
-  border-radius: 5px;
-}
-
-.tooltip {
-  position: absolute; 
-  visibility: hidden; 
-  opacity: 0; 
-  width: 400px; 
-  padding: 10px; 
-  border: 1px solid antiquewhite; 
-  border-radius: 5px; 
-  background-color: #000000; 
-  border-radius: 5px;
-  transition: opacity 0.2s, visibility 0.2s; 
-}
-
-.tooltip-button:hover + .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-
-.tooltip:hover {
-  visibility: visible; 
-  opacity: 1;
-}
-
-
 svg {
   width: 100%;
 }
@@ -638,3 +469,78 @@ svg path:hover {
     transform: rotate(var(--rotate));
   }
 }
+
+
+.spinning {
+  animation: spinning steps(8, end) 2s infinite;
+}
+
+@-webkit-keyframes spinning {
+  0%   { transform:rotate(0deg) }
+  100% { transform:rotate(360deg) }
+}
+
+.pipes .inner, .blocks .inner, .blocks-gaps {
+animation: progress-bar-width 30s infinite;
+overflow:hidden;
+animation-timing-function:linear;
+}
+
+.orangebox ::selection {
+  background-color: black;
+  color:#FA4C14;
+  }
+ 
+.parallax-container ::selection {
+  background-color: black;
+  color:#FA4C14;
+  }
+
+
+.skillsholder{
+  width: 660px;
+  background-color: #FA4C14;
+  color: #000;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.skillsholder p {
+  font-size: 60px;
+  letter-spacing: 16px;
+}
+
+.skillsholder ::selection {
+  background-color: black;
+  color:#FA4C14;
+  }
+
+
+.skillsholderbig {
+  width: 1200px;
+  background-color: #FA4C14;
+  color: #000;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.skillsholderbig ::selection {
+  background-color: black;
+  color:#FA4C14;
+  }
+
+
+  .skillsholderbig1 {
+    width: 1200px;
+    background-color: #FA4C14;
+    color: #000;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+  
+  }
+  
+  .skillsholderbig1 ::selection {
+    background-color: black;
+    color:#FA4C14;
+    }

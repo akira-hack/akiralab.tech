@@ -255,6 +255,12 @@ var AsciiMorph = (function() {
     changeText();
 
 
+
+
+
+
+
+
     const canvas = document.querySelector("canvas");
     const gl = canvas.getContext("webgl");
     
@@ -264,18 +270,17 @@ var AsciiMorph = (function() {
     
     // Configurable parameters
     const config = {
-      particleCount: 5000,
-      textArray: ["ENGINEER."],
-      mouseRadius: 0.1,
-      particleSize: 2,
-      forceMultiplier: 0.001,
-      returnSpeed: 0.005,
-      velocityDamping: 0.95,
-      colorMultiplier: 40000,
-      saturationMultiplier: 1000,
-      textChangeInterval: 10000,
-      rotationForceMultiplier: 0.5
-    };
+  particleCount: 5000,
+  textArray: ["ENGINEER."],
+  mouseRadius: 0.08, 
+  particleSize: 2,
+  forceMultiplier: 0.002, 
+  returnSpeed: 0.0075,
+  velocityDamping: 0.95,
+  saturationMultiplier: 1000,
+  textChangeInterval: 10000,
+  rotationForceMultiplier: 0.5
+};
     
     let currentTextIndex = 0;
     let nextTextTimeout;
@@ -307,23 +312,14 @@ var AsciiMorph = (function() {
     `;
     
     const fragmentShaderSource = `
-        precision mediump float;
-        varying float v_hue;
-        varying float v_saturation;
-        void main() {
-            float c = v_hue * 6.0;
-            float x = 1.0 - abs(mod(c, 2.0) - 1.0);
-            vec3 color;
-            if (c < 1.0) color = vec3(1.0, x, 0.0);
-            else if (c < 2.0) color = vec3(x, 1.0, 0.0);
-            else if (c < 3.0) color = vec3(0.0, 1.0, x);
-            else if (c < 4.0) color = vec3(0.0, x, 1.0);
-            else if (c < 5.0) color = vec3(x, 0.0, 1.0);
-            else color = vec3(1.0, 0.0, x);
-            vec3 finalColor = mix(vec3(1.0), color, v_saturation);
-            gl_FragColor = vec4(finalColor, 1.0);
-        }
-    `;
+    precision mediump float;
+    varying float v_hue;
+    varying float v_saturation;
+    void main() {
+      vec3 color = vec3(1.0, 0.28, 0.08); // #FA4C14
+      gl_FragColor = vec4(color, 1.0);
+    }
+  `;
     
     function createShader(gl, type, source) {
       const shader = gl.createShader(type);
@@ -455,8 +451,7 @@ var AsciiMorph = (function() {
         );
         const hue = (speed * config.colorMultiplier) % 360;
     
-        hues[i] = hue / 360;
-        saturations[i] = Math.min(speed * config.saturationMultiplier, 1);
+
         positions[i * 2] = particle.x;
         positions[i * 2 + 1] = particle.y;
       }
@@ -476,11 +471,8 @@ var AsciiMorph = (function() {
       gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(positionAttributeLocation);
       gl.bindBuffer(gl.ARRAY_BUFFER, hueBuffer);
-      gl.vertexAttribPointer(hueAttributeLocation, 1, gl.FLOAT, false, 0, 0);
-      gl.enableVertexAttribArray(hueAttributeLocation);
-      gl.bindBuffer(gl.ARRAY_BUFFER, saturationBuffer);
-      gl.vertexAttribPointer(saturationAttributeLocation, 1, gl.FLOAT, false, 0, 0);
-      gl.enableVertexAttribArray(saturationAttributeLocation);
+      gl.disableVertexAttribArray(hueAttributeLocation);
+      gl.disableVertexAttribArray(saturationAttributeLocation);
       gl.useProgram(program);
       gl.drawArrays(gl.POINTS, 0, config.particleCount);
       requestAnimationFrame(animate);
@@ -510,10 +502,6 @@ var AsciiMorph = (function() {
     nextTextTimeout = setTimeout(changeText, config.textChangeInterval);
 
 
-
-
-
-    
     const wrapper = document.querySelector('.gridblock');
 const items = wrapper.querySelectorAll('.gridblockspan');
 
@@ -535,3 +523,186 @@ const onPointerMove = (pointer) => {
 window.addEventListener('pointermove', onPointerMove);
 
 onPointerMove(items[32].getBoundingClientRect());
+
+
+
+
+
+
+
+
+const scrollIndicatorBars = document.getElementById('scroll-indicator-bars');
+const maxBars = 20;
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const documentHeight = document.body.offsetHeight;
+  const viewportHeight = window.innerHeight;
+  const scrollPercentage = (scrollPosition / (documentHeight - viewportHeight)) * 100;
+
+  const numBars = Math.round((scrollPercentage / 100) * maxBars);
+  const barsHtml = Array(numBars).fill('|').join('') + Array(maxBars - numBars).fill('-').join('');
+
+  scrollIndicatorBars.innerHTML = barsHtml;
+});
+
+
+
+
+
+
+const scrollProgress = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const documentHeight = document.body.offsetHeight;
+  const viewportHeight = window.innerHeight;
+  const scrollPercentage = (scrollPosition / (documentHeight - viewportHeight)) * 100;
+
+  const percentageText = `${Math.round(scrollPercentage).toString().padStart(3, '0')}`;
+  scrollProgress.textContent = percentageText;
+});
+
+
+
+
+
+
+
+
+
+const ascii = ".:-=+*#%@"; 
+
+const myCanvas = document.createElement('canvas');
+myCanvas.width = 32;
+myCanvas.height = 48;
+
+const myCtx = myCanvas.getContext('2d');
+
+const asciicontainer = document.querySelector('.ascii');
+
+const map = (x, max, min, tmax, tmin) => (x - min) / (max - min) * (tmax - tmin) + tmin;
+
+const lerp = (x, a, b) => a + (b - a) * x;
+
+const map_table = new Array(255).fill(1).map((_, i) => Math.ceil(map(i, 255, 0, ascii.length - 1, 0)));
+
+const line = (x1, y1, x2, y2) => {
+    myCtx.beginPath();
+
+    let grad = myCtx.createLinearGradient(x1, y1, x2, y2);
+    grad.addColorStop(0, "rgba(255, 255, 255, 0.75)");
+    grad.addColorStop(0.5, "rgba(255, 255, 255, 0.35)");
+    grad.addColorStop(1, "rgba(255, 255, 255, 0.12)");
+    
+    myCtx.strokeStyle = grad;
+    myCtx.moveTo(x1, y1);
+    myCtx.lineTo(x2, y2);
+    myCtx.stroke();
+    myCtx.closePath();
+}
+
+const getAsciiOutput = (canvas, ctx) => {
+    let imgd = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let pix = imgd.data;
+
+    let output = '';
+
+    for (let i = 0, n = pix.length; i < n; i += 4) {
+        let xpos = (i / 4) % canvas.width;
+        let char = ascii[map_table[pix[i]]];
+        
+        if (xpos == 0) {
+            output += '<div>';
+        } else if (xpos == canvas.width - 1) {
+            output.innerHTML += '</div>';
+        }
+
+        output += char == ascii[0] ? `<span style="color: #444">${char}</span>` : char;
+    }
+
+    return output;
+}
+
+const randomBox = () => ({
+    x: Math.floor(Math.random() * 10) + 7,
+    y: Math.floor(Math.random() * 15) + 7,
+    sx: 0,
+    sy: 0,
+    w: 6,
+    h: 10,
+    progress: 0
+});
+
+let box = randomBox();
+box.sx = box.x;
+box.sy = box.y;
+
+let nextPos = randomBox();
+
+let tick = 0;
+let mouseState = false;
+
+const loop = () => {
+    tick += 0.025;
+
+    myCtx.fillStyle = '#000';
+    myCtx.fillRect(0, 0, myCanvas.width, myCanvas.height);
+
+    myCtx.fillStyle = '#f4f4f4'
+    myCtx.fillRect(box.x, box.y, box.w, box.h);
+
+
+    line(box.x, box.y, 0, 0);
+    line(box.x + box.w, box.y, myCanvas.width, 0);
+    line(box.x, box.y + box.h, 0, myCanvas.height);
+    line(box.x + box.w, box.y + box.h, myCanvas.width, myCanvas.height);
+
+    myCtx.beginPath();
+    let x = box.x + box.w / 2;
+    let y = box.y + box.h / 2;
+
+    let grad = myCtx.createRadialGradient(x, y, 5, x, y, 20);
+    grad.addColorStop(0, "rgba(255, 255, 255, 0.5)");
+    grad.addColorStop(0.5, "rgba(0, 0, 0, 0)");
+    grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+    
+    myCtx.fillStyle = grad;
+    myCtx.arc(x, y, 6 + 2.5 * Math.acos(Math.sin(tick) * Math.PI / 4), 0, 2 * Math.PI);
+    myCtx.fill();
+    myCtx.closePath();
+
+    if (!mouseState) {
+        if (box.progress < 0.99) {
+            box.progress += 0.005;
+            box.x = lerp(box.progress, box.sx, nextPos.x);
+            box.y = lerp(box.progress, box.sy, nextPos.y);
+        } else {
+            box = Object.assign({}, nextPos);
+            box.sx = box.x;
+            box.sy = box.y;
+            nextPos = randomBox();
+        }
+    }
+
+    asciicontainer.innerHTML = getAsciiOutput(myCanvas, myCtx);
+    
+    requestAnimationFrame(loop);
+}
+
+loop();
+
+window.addEventListener('mouseover', _ => {
+  mouseState = true;
+});
+
+window.addEventListener('mouseout', _ => {
+  mouseState = false;
+});
+
+window.addEventListener('mousemove', e => {
+  if (mouseState) {
+      box.x = map(e.clientX, window.innerWidth, 0, myCanvas.width, 0) - box.w / 2;
+      box.y = map(e.clientY, window.innerHeight, 0, myCanvas.height, 0) - box.h / 2;
+  }
+});
