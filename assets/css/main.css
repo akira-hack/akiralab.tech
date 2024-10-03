@@ -497,25 +497,6 @@ animation-timing-function:linear;
   }
 
 
-.skillsholder{
-  width: 660px;
-  background-color: #FA4C14;
-  color: #000;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
-.skillsholder p {
-  font-size: 60px;
-  letter-spacing: 16px;
-}
-
-.skillsholder ::selection {
-  background-color: black;
-  color:#FA4C14;
-  }
-
-
 .skillsholderbig {
   width: 1200px;
   background-color: #FA4C14;
@@ -545,12 +526,3 @@ animation-timing-function:linear;
     color:#FA4C14;
     }
 
-
-
-
-
-
-
-
-
-    
