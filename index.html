@@ -103,7 +103,7 @@ loadingVideo.addEventListener('ended', () => {
   <div class="preloader" data-preloader=""></div> 
 
 
-          <script type="text/javascript">
+          <script>
             function createMarquee(word, width) {
               const marqueeText = ` ${word} `;
               let newText = marqueeText;
@@ -132,7 +132,7 @@ loadingVideo.addEventListener('ended', () => {
             }
           </script>
           
-          <script type="text/javascript">
+          <script>
             createMarquee("MANIFESTO", 1000);
           </script>
 
@@ -158,10 +158,10 @@ loadingVideo.addEventListener('ended', () => {
 
 
           
-            <canvas></canvas>
+            <!-- <canvas></canvas> -->
 
 
-        <div  style="display: flex; flex-direction: row; width: 100%; text-align: center; margin: 0 auto; border: 1px solid #313131; border-radius: 5px; max-width: 1400px;">
+        <div  style="display: flex; flex-direction: row; width: 100%; text-align: center; margin: 0 auto; border: 1px solid #313131; border-radius: 5px; max-width: 1400px; margin-top: 40px;">
           <div class="orangebox" style="margin: 10px; width: 300px; height: 700px; background-color: #FA4C14; clip-path: polygon(0 0, 100% 0, 100% 86%, 65% 100%, 0 100%); border-radius: 5px;">
             <div style="margin: 10%; border: 1.5px solid black; border-radius: 10px; "><img src="./img/b70281b47c87eb948628885f0062a052.gif" style="width: 70%;"></div>
             <p style="font-size: xx-large; font-family: 'Jersey 15', sans-serif; color: black;">AKIRA</p>
@@ -175,12 +175,6 @@ loadingVideo.addEventListener('ended', () => {
             <p class="greeting_hlwrld" style="text-align: left; font-family: 'Jersey 15', sans-serif; color: #FA4C14; font-size: 40px; padding-top: 20px; padding-left: 15%;">PORTFOLIO</p>
             <ul style="list-style: square; text-align: left; font-size: x-large; margin-right: 10px;">
               <li>GENERAL:</li>
-              <p></p>
-              <li>LANGUAGES:</li>
-              <p></p>
-              <li>SKILLS:</li>
-              <p></p>
-              <li>SIDE ABILITIES:</li>
               <p></p>
               <li>CAREERS:</li>
             </ul>
@@ -299,14 +293,39 @@ loadingVideo.addEventListener('ended', () => {
           </div>
         </div>
 
+
+
+        <script> 
+          function runningline(msg,ctrlwidth)
+          {
+          msg = " "+msg
+          newmsg = msg
+          while (newmsg.length < ctrlwidth) {newmsg += msg}
+          document.write ('<form name="Tekst">')
+          document.write ('<input name="tekst" style="border:0;font-family:DotGothic16, sans-serif; font-size:40px;color:black;background-color:#FA4C14;width:1196px;user-select:none;pointer-events: none;" value= "'+newmsg+'" size= '+ctrlwidth+' />')
+          document.write ('</form>')
+          prokrutka()
+          }
+          function prokrutka()
+          {
+          NowMsg=document.Tekst.tekst.value
+          NowMsg=NowMsg.substring(1,NowMsg.length)+NowMsg.substring(0,1)
+          document.Tekst.tekst.value = NowMsg
+          bannerid=setTimeout("prokrutka()",200)
+          }
+        </script>
+
+
+
         <div class="skillsholderbig">
-          <p style="padding-top: 40px; font-size: 40px; text-align: center;">LANGUEGES &gt ENGINEERING/DEVELOPING/HACKING</p>
+          <p style="padding-top: 8px; text-align: center;"><script>runningline("ハッカー エンジニア デベロッパー",200)</script></p>
           <div style="width: 100%; height: 2px; background-color: black;"></div>
           <div class="skillsholderbig1">
           <div style="width: 100%; display: flex;">
             <div style="width: 192px;  border-bottom: 2px solid #000000; border-right: 2px solid #000000;">
-              <p style="border-bottom: 2px solid #000000;">osijdbsibj</p>
-              <p>dkbfjmldkbfh</p>
+              <p style=" font-size: 40px; text-align: center;">HARD</p>
+              <div style="width: 100%; height: 2px; background-color: black;"></div>
+              <p style=" font-size: 40px; text-align: center;">SKILLS</p>
             </div>
             <div style="width: 700px; height: 200px; border-right: 2px solid #000000; border-bottom: 2px solid #000000; ">sdgbsdbsb</div>
           </div>
@@ -1264,4 +1283,4 @@ loadingVideo.addEventListener('ended', () => {
       </div>
 </div>
 </body>
-</html>
+</html> 
